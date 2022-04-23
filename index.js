@@ -7,7 +7,9 @@ const app = express();
 app.use(express.json());
 
 mongoose
-  .connect("mongodb://localhost/todos")
+  .connect(
+    "mongodb+srv://todos:w3axhsp3rHBbqKLe@cluster0.quagy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  )
   .then(() => {
     console.log("server connected");
   })

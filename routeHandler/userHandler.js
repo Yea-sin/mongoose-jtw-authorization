@@ -42,11 +42,14 @@ router.post("/login", async (req, res) => {
             email: req.body.email,
             userId: req.body._id,
           },
+
           process.env.JWT_SECRET,
           {
             expiresIn: "1h",
           }
         );
+        /* const response = pm.response.json();
+        pm.globals.set("jwt_token", response.token); */
         res.status(200).json({
           "access token": token,
           message: "login successful",
